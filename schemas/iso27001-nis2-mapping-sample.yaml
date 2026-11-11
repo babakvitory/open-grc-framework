@@ -1,0 +1,57 @@
+# Open GRC Framework - Control Cross-Mapping Schema (Sample v0.1)
+# Demonstrates machine-readable harmonization between ISO/IEC 27001:2022 and EU NIS2 Directive
+
+schema_version: "1.0.0"
+framework_mapping:
+  id: "MAP-ISO27001-NIS2-001"
+  name: "ISO/IEC 27001:2022 to EU NIS2 Directive Baseline Mapping"
+  maintainer: "Open GRC Community"
+  status: "draft-architecture"
+
+domains:
+  - domain_id: "DOM-INC-01"
+    domain_name: "Incident Handling & Reporting"
+    controls:
+      - unified_control_id: "UCTRL-IR-001"
+        title: "Security Incident Detection, Response, and Early Warning"
+        description: "Establish structured procedures to detect, analyze, contain, and report significant cybersecurity incidents within statutory timelines."
+        mappings:
+          iso_27001_2022:
+            - control_id: "A.5.24"
+              control_title: "Information security incident management planning and preparation"
+            - control_id: "A.5.25"
+              control_title: "Assessment and decision on information security events"
+            - control_id: "A.5.26"
+              control_title: "Response to information security incidents"
+          eu_nis2_directive:
+            - article: "Article 21(2)(b)"
+              requirement: "Incident handling (prevention, detection, and response)"
+            - article: "Article 23(4)(a)"
+              requirement: "Early warning notification to CSIRT/competent authority within 24 hours"
+        evidence_requirements:
+          - id: "EVD-IR-01"
+            type: "policy_document"
+            description: "Approved Incident Response Plan (IRP) with escalation matrix"
+          - id: "EVD-IR-02"
+            type: "technical_log"
+            description: "SIEM/SOAR alert triage logs and incident post-mortem records"
+
+  - domain_id: "DOM-SUP-02"
+    domain_name: "Supply Chain & Third-Party Risk Management"
+    controls:
+      - unified_control_id: "UCTRL-SC-001"
+        title: "Supplier Information Security & Vulnerability Governance"
+        description: "Assess and monitor cybersecurity posture of direct suppliers and service providers throughout the lifecycle."
+        mappings:
+          iso_27001_2022:
+            - control_id: "A.5.19"
+              control_title: "Information security in supplier relationships"
+            - control_id: "A.5.21"
+              control_title: "Managing information security in the ICT supply chain"
+          eu_nis2_directive:
+            - article: "Article 21(2)(d)"
+              requirement: "Supply chain security, including security-related aspects concerning the relationships between each entity and its direct suppliers"
+        evidence_requirements:
+          - id: "EVD-SC-01"
+            type: "assessment_record"
+            description: "Vendor security risk assessment questionnaire and SLA security clauses"
