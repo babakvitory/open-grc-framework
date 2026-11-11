@@ -1,0 +1,43 @@
+name: Validate GRC Schemas
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'schemas/**'
+      - 'core/**'
+      - '.github/workflows/validate-schemas.yml'
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - 'schemas/**'
+      - 'core/**'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Run GRC Schema Validator
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Validate All Schema Files
+        run: |
+          for file in schemas/*.yaml; do
+            echo "Validating $file..."
+            python core/schema_validator.py "$file"
+          done
