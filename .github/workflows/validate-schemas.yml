@@ -35,7 +35,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-            - name: Validate All Schema Files
+      - name: Validate All Schema Files
         run: |
           for file in schemas/*.yaml; do
             echo "Validating $file..."
@@ -44,4 +44,3 @@ jobs:
 
       - name: Generate Unified Coverage Report
         run: python core/cli_reporter.py
-
