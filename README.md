@@ -2,6 +2,7 @@
 
 **An extensible, open-source platform for Information Security Governance, Risk, and Compliance (GRC) standardization and automation.**
 
+[![Validate GRC Schemas](https://github.com)](https://github.com)
 [![License](https://shields.io)](https://opensource.org)
 [![Status: Architecture & Infrastructure](https://shields.io)]()
 [![Contributions Welcome](https://shields.io)]()
