@@ -1,0 +1,59 @@
+# Open GRC Framework - Control Cross-Mapping Schema (Sample v0.1)
+# Demonstrates machine-readable harmonization between ISO/IEC 27001:2022 and EU DORA Regulation (EU) 2022/2554
+
+schema_version: "1.0.0"
+framework_mapping:
+  id: "MAP-ISO27001-DORA-001"
+  name: "ISO/IEC 27001:2022 to EU DORA ICT Risk & Resilience Mapping"
+  maintainer: "Open GRC Community"
+  status: "draft-architecture"
+
+domains:
+  - domain_id: "DOM-ICT-01"
+    domain_name: "ICT Risk Management Framework & Governance"
+    controls:
+      - unified_control_id: "UCTRL-DORA-001"
+        title: "ICT Risk Management Governance & Continuous Monitoring"
+        description: "Maintain a comprehensive, documented ICT risk management framework reviewed regularly and overseen by the management body."
+        mappings:
+          iso_27001_2022:
+            - control_id: "Clause 5.1"
+              control_title: "Leadership and commitment"
+            - control_id: "Clause 6.1.2"
+              control_title: "Information security risk assessment"
+            - control_id: "A.5.1"
+              control_title: "Policies for information security"
+          eu_dora_regulation:
+            - article: "Article 5(1)"
+              requirement: "Internal governance and control framework ensuring effective and prudent management of ICT risk"
+            - article: "Article 6(1)"
+              requirement: "Sound, comprehensive and well-documented ICT risk management framework"
+        evidence_requirements:
+          - id: "EVD-DORA-01"
+            type: "governance_record"
+            description: "Board-approved ICT Risk Management Policy and annual review minutes"
+          - id: "EVD-DORA-02"
+            type: "risk_register"
+            description: "Updated ICT Risk Register linked to critical or important business functions"
+
+  - domain_id: "DOM-RES-02"
+    domain_name: "Digital Operational Resilience Testing"
+    controls:
+      - unified_control_id: "UCTRL-DORA-002"
+        title: "Vulnerability Assessments, Penetration Testing & TLPT"
+        description: "Execute periodic digital operational resilience testing, including vulnerability scans, open-source analyses, and threat-led penetration testing (TLPT)."
+        mappings:
+          iso_27001_2022:
+            - control_id: "A.8.8"
+              control_title: "Management of technical vulnerabilities"
+            - control_id: "A.5.7"
+              control_title: "Threat intelligence"
+          eu_dora_regulation:
+            - article: "Article 24(1)"
+              requirement: "General requirements for the performance of digital operational resilience testing"
+            - article: "Article 26(1)"
+              requirement: "Advanced testing of ICT tools, systems and processes based on Threat-Led Penetration Testing (TLPT)"
+        evidence_requirements:
+          - id: "EVD-DORA-03"
+            type: "technical_report"
+            description: "Annual penetration testing reports and remediation tracking logs"
