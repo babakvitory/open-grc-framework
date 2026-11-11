@@ -1,3 +1,22 @@
+# Open GRC Framework 🛡️
+
+**An extensible, open-source platform for Information Security Governance, Risk, and Compliance (GRC) standardization and automation.**
+
+[![Validate GRC Schemas](https://github.com)](https://github.com)
+[![License](https://shields.io)](https://opensource.org)
+[![Status: Architecture & Infrastructure](https://shields.io)]()
+[![Contributions Welcome](https://shields.io)]()
+
+---
+
+## 🎯 Vision & Problem Statement
+Organizations and security practitioners face significant fragmentation when managing multiple regulatory and security frameworks simultaneously. **Open GRC Framework** is being architected to solve core challenges in security standardization by providing a unified, machine-readable, and community-extensible platform.
+
+### Key Objectives:
+* **Cross-Standard Control Mapping:** Seamlessly map and harmonize security controls across **ISO/IEC 27001**, **NIS2 Directive**, **DORA**, **GDPR**, and **NIST CSF**.
+* **Modular Plugin Architecture:** Designed from the ground up so GRC specialists and security engineers can build and share custom compliance modules, audit checklists, and risk assessment templates.
+* **Compliance-as-Code:** Transform static spreadsheets and documents into structured, version-controlled schemas (JSON/YAML).
+
 ---
 
 ## 🏗️ Planned Architecture
@@ -48,3 +67,13 @@ python core/cli_reporter.py
 - [ ] **Phase 4: Community Ecosystem** — Scale community-contributed compliance modules and documentation.
 
 ---
+
+## 🤝 Contributing
+We welcome collaboration from **Information Security Specialists, GRC Consultants, Auditors, and Open-Source Developers**. 
+
+Please read our [Contributing Guidelines](CONTRIBUTING.md) or open an **Issue** to suggest compliance frameworks, data schemas, or architectural improvements.
+
+---
+
+## 📄 License
+This project is licensed under the **Apache License 2.0** - see the [LICENSE](LICENSE) file for details.
